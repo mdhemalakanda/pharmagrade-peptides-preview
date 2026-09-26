@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 440" role="img" aria-label="Abstract laboratory research artwork with DNA strand and molecules">
+  <defs>
+    <linearGradient id="pgaHeroBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1035"/>
+      <stop offset="0.42" stop-color="#1e1b5e"/>
+      <stop offset="0.74" stop-color="#452287"/>
+      <stop offset="1" stop-color="#7c2db9"/>
+    </linearGradient>
+    <radialGradient id="pgaHeroBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pgaHeroPink" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#e879f9" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#e879f9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pgaHeroViolet" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pgaHeroStrand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8be9ff"/>
+      <stop offset="0.5" stop-color="#c9a5ff"/>
+      <stop offset="1" stop-color="#f0abfc"/>
+    </linearGradient>
+    <linearGradient id="pgaHeroWave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.55" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+    <radialGradient id="pgaHeroBubbleTeal" cx="0.36" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#eafdff" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#7fe7f2" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#0ea5c9" stop-opacity="0.12"/>
+    </radialGradient>
+    <radialGradient id="pgaHeroBubbleViolet" cx="0.36" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#f3eaff" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#b78ef7" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#6d28d9" stop-opacity="0.1"/>
+    </radialGradient>
+    <radialGradient id="pgaHeroBubblePink" cx="0.36" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#ffe9f7" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#f193d8" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#c026d3" stop-opacity="0.12"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1120" height="440" fill="url(#pgaHeroBg)"/>
+  <ellipse cx="900" cy="70" rx="420" ry="230" fill="url(#pgaHeroBlue)"/>
+  <ellipse cx="120" cy="420" rx="380" ry="240" fill="url(#pgaHeroPink)"/>
+  <ellipse cx="620" cy="180" rx="330" ry="220" fill="url(#pgaHeroViolet)"/>
+
+  <!-- DNA double helix -->
+  <g stroke-linecap="round" fill="none">
+    <path d="M170 20 C 230 41 255 63 255 84 C 255 105 230 125 170 146 C 110 167 85 189 85 210 C 85 231 110 253 170 274 C 230 295 255 317 255 338 C 255 359 230 381 170 402 C 128 417 103 432 88 446" stroke="url(#pgaHeroStrand)" stroke-width="7" opacity="0.9"/>
+    <path d="M170 20 C 110 41 85 63 85 84 C 85 105 110 125 170 146 C 230 167 255 189 255 210 C 255 231 230 253 170 274 C 110 295 85 317 85 338 C 85 359 110 381 170 402 C 212 417 237 432 252 446" stroke="url(#pgaHeroStrand)" stroke-width="7" opacity="0.65"/>
+    <g stroke-width="4" opacity="0.55">
+      <line x1="118" y1="44" x2="222" y2="44"/>
+      <line x1="92" y1="84" x2="248" y2="84"/>
+      <line x1="112" y1="120" x2="228" y2="120"/>
+      <line x1="122" y1="180" x2="218" y2="180"/>
+      <line x1="94" y1="210" x2="246" y2="210"/>
+      <line x1="116" y1="244" x2="224" y2="244"/>
+      <line x1="120" y1="300" x2="220" y2="300"/>
+      <line x1="95" y1="338" x2="245" y2="338"/>
+      <line x1="114" y1="374" x2="226" y2="374"/>
+      <line x1="104" y1="420" x2="236" y2="420"/>
+    </g>
+  </g>
+
+  <!-- Orbital ring around the molecule cluster -->
+  <ellipse cx="640" cy="190" rx="255" ry="115" fill="none" stroke="#b79bff" stroke-width="2" opacity="0.26" transform="rotate(-13 640 190)"/>
+
+  <!-- Glassy molecule bubbles -->
+  <g>
+    <circle cx="585" cy="185" r="78" fill="url(#pgaHeroBubbleTeal)"/>
+    <ellipse cx="556" cy="150" rx="22" ry="13" fill="#ffffff" opacity="0.7" transform="rotate(-24 556 150)"/>
+    <circle cx="705" cy="118" r="48" fill="url(#pgaHeroBubbleViolet)"/>
+    <ellipse cx="687" cy="97" rx="14" ry="8" fill="#ffffff" opacity="0.75" transform="rotate(-24 687 97)"/>
+    <circle cx="662" cy="278" r="27" fill="url(#pgaHeroBubblePink)"/>
+    <ellipse cx="652" cy="267" rx="8" ry="5" fill="#ffffff" opacity="0.75" transform="rotate(-24 652 267)"/>
+    <circle cx="524" cy="302" r="20" fill="url(#pgaHeroBubbleTeal)"/>
+    <ellipse cx="517" cy="294" rx="6" ry="4" fill="#ffffff" opacity="0.7" transform="rotate(-24 517 294)"/>
+    <circle cx="795" cy="228" r="31" fill="url(#pgaHeroBubbleViolet)"/>
+    <ellipse cx="784" cy="215" rx="9" ry="6" fill="#ffffff" opacity="0.7" transform="rotate(-24 784 215)"/>
+    <circle cx="648" cy="66" r="11" fill="url(#pgaHeroBubbleTeal)"/>
+    <circle cx="738" cy="302" r="14" fill="url(#pgaHeroBubblePink)"/>
+    <circle cx="498" cy="112" r="12" fill="url(#pgaHeroBubbleViolet)"/>
+    <circle cx="860" cy="150" r="17" fill="url(#pgaHeroBubbleTeal)"/>
+    <ellipse cx="854" cy="143" rx="5" ry="3" fill="#ffffff" opacity="0.7" transform="rotate(-24 854 143)"/>
+  </g>
+
+  <!-- Light wave across the lower half -->
+  <path d="M-40 362 C 180 296 380 424 620 356 C 830 298 1000 352 1160 318" fill="none" stroke="url(#pgaHeroWave)" stroke-width="72" stroke-linecap="round" opacity="0.16"/>
+  <path d="M-40 398 C 200 344 420 448 660 386 C 870 334 1020 382 1160 356" fill="none" stroke="#67e8f9" stroke-width="22" stroke-linecap="round" opacity="0.2"/>
+
+  <!-- Sparkles and particles -->
+  <g fill="#ffffff">
+    <circle cx="420" cy="76" r="3" opacity="0.85"/>
+    <circle cx="470" cy="180" r="2" opacity="0.55"/>
+    <circle cx="380" cy="260" r="2.4" opacity="0.6"/>
+    <circle cx="900" cy="60" r="2.2" opacity="0.7"/>
+    <circle cx="965" cy="130" r="2.6" opacity="0.5"/>
+    <circle cx="930" cy="300" r="2" opacity="0.55"/>
+    <circle cx="1010" cy="240" r="2.8" opacity="0.45"/>
+    <circle cx="330" cy="120" r="2" opacity="0.5"/>
+    <circle cx="540" cy="380" r="2.2" opacity="0.5"/>
+    <circle cx="700" cy="390" r="2" opacity="0.45"/>
+    <circle cx="840" cy="370" r="2.4" opacity="0.5"/>
+    <circle cx="1060" cy="380" r="2" opacity="0.4"/>
+    <circle cx="300" cy="330" r="2.4" opacity="0.45"/>
+  </g>
+  <g stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" opacity="0.8">
+    <path d="M420 62 v28 M406 76 h28"/>
+    <path d="M905 46 v24 M893 58 h24"/>
+    <path d="M975 236 v20 M965 246 h20"/>
+  </g>
+</svg>

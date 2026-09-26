@@ -1,0 +1,154 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login / Sign Form — card only</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/auth.css">
+<style>body{margin:0;background:linear-gradient(120deg,#0c1830,#12263f 55%,#0c1830);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px}</style>
+</head><body>
+<div class="pga pga--card-only" data-mode="login"><div class="pga-shell"><div class="pga-card">
+					<p class="pga-card__title">Pharma Grade Peptides</p>
+					<p class="pga-card__kicker">High-Quality USA Research Peptides</p>
+
+					<div class="pga-reviews" aria-label="Verified reviews: 4.9 / 5 from 1,595 reviews">
+						<div class="pga-reviews__brand" aria-hidden="true">
+							<img decoding="async" src="assets/assets/img/logo-light.svg" alt="" width="128" height="36">
+							<span class="pga-reviews__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+						</div>
+						<div class="pga-reviews__score">
+							<b>VERIFIED REVIEWS</b>
+							<span class="pga-reviews__scorenum">&#9733; 4.9 / 5</span>
+							<small>1,595 reviews</small>
+						</div>
+					</div>
+
+					<div class="pga-tabs" role="tablist" aria-label="Account access">
+						<button type="button" class="pga-tab is-active" data-tab="login" role="tab" aria-selected="true">Sign in</button>
+						<button type="button" class="pga-tab" data-tab="register" role="tab" aria-selected="false">Create account</button>
+					</div>
+
+					
+					<div class="pga-panels">
+
+						<!-- Sign in -->
+						<div class="pga-panel is-active" data-panel="login" role="tabpanel">
+							<form class="pga-form js-pga-form" data-action="pga_login" novalidate>
+								<label class="pga-field">
+									<span>Email or Username</span>
+									<input type="text" name="login" autocomplete="username" required>
+								</label>
+								<label class="pga-field">
+									<span>Password</span>
+									<span class="pga-password">
+										<input class="pga-password__input" type="password" name="password" autocomplete="current-password" required>
+										<button type="button" class="pga-password__toggle js-pga-toggle" data-show="Show" data-hide="Hide">Show</button>
+									</span>
+								</label>
+
+								<p class="pga-smsnote">SMS opt-in uses the mobile number already saved to your account.</p>
+
+								<div class="pga-terms">
+									<p class="pga-terms__head">Research Use Only</p>
+									<div class="pga-terms__body">
+										<p>By using this site, you acknowledge that all products and information are provided for research and development purposes only. Products are not intended for human consumption, medical use, diagnosis, treatment, cure, or prevention of disease.</p>
+										<p class="pga-terms__strong">You must be 21 years of age or older to use this website.</p>
+									</div>
+									<label class="pga-check">
+										<input type="checkbox" name="confirm21" value="1" required>
+										<span>I confirm that I am 21+ and agree that all products and information are for research-use purposes only.</span>
+									</label>
+									<label class="pga-check">
+										<input type="checkbox" name="optin_email" value="1" checked>
+										<span>I agree to receive research account updates, order-related reminders, and promotional messages by email from Pharma Grade Peptides. I can unsubscribe at any time.</span>
+									</label>
+									<label class="pga-check">
+										<input type="checkbox" name="optin_sms" value="1">
+										<span>I agree to receive recurring transactional and marketing text messages from Pharma Grade Peptides, including order/account updates and promotions. Consent is not a condition of purchase. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help.</span>
+									</label>
+								</div>
+
+								<label class="pga-hp" aria-hidden="true">Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+								<button type="submit" class="pga-btn">Continue</button>
+								<p class="pga-small"><a href="#" class="js-pga-forgot-link">Forgot password?</a></p>
+							</form>
+						</div>
+
+						<!-- Register -->
+						<div class="pga-panel" data-panel="register" role="tabpanel">
+							<form class="pga-form js-pga-form" data-action="pga_register" novalidate>
+								<label class="pga-field">
+									<span>Username</span>
+									<input type="text" name="username" autocomplete="username" placeholder="Auto-generated if left blank">
+								</label>
+								<label class="pga-field">
+									<span>Email</span>
+									<input type="email" name="email" autocomplete="email" required>
+								</label>
+								<label class="pga-field">
+									<span>Mobile phone number</span>
+									<input type="tel" name="phone" autocomplete="tel" placeholder="For order and delivery updates">
+								</label>
+								<label class="pga-field">
+									<span>Birthdate</span>
+									<input type="date" name="birthdate" autocomplete="bday" required>
+									<span class="pga-field-note">You must be 21 or older to hold a research account.</span>
+								</label>
+								<label class="pga-field">
+									<span>Password</span>
+									<span class="pga-password">
+										<input class="pga-password__input" type="password" name="password" autocomplete="new-password" minlength="8" required>
+										<button type="button" class="pga-password__toggle js-pga-toggle" data-show="Show" data-hide="Hide">Show</button>
+									</span>
+									<span class="pga-field-note">At least 8 characters.</span>
+								</label>
+								<label class="pga-field">
+									<span>Confirm password</span>
+									<span class="pga-password">
+										<input class="pga-password__input" type="password" name="password2" autocomplete="new-password" minlength="8" required>
+										<button type="button" class="pga-password__toggle js-pga-toggle" data-show="Show" data-hide="Hide">Show</button>
+									</span>
+								</label>
+
+								<div class="pga-terms">
+									<p class="pga-terms__head">Research Use Only</p>
+									<div class="pga-terms__body">
+										<p>By using this site, you acknowledge that all products and information are provided for research and development purposes only. Products are not intended for human consumption, medical use, diagnosis, treatment, cure, or prevention of disease.</p>
+										<p class="pga-terms__strong">You must be 21 years of age or older to use this website.</p>
+									</div>
+									<label class="pga-check">
+										<input type="checkbox" name="consent_research" value="1" required>
+										<span>I confirm that I am 21+ and agree that all products and information are for research-use purposes only.</span>
+									</label>
+									<label class="pga-check">
+										<input type="checkbox" name="optin_email" value="1" checked>
+										<span>I agree to receive research account updates, order-related reminders, and promotional messages by email from Pharma Grade Peptides. I can unsubscribe at any time.</span>
+									</label>
+									<label class="pga-check">
+										<input type="checkbox" name="optin_sms" value="1">
+										<span>I agree to receive recurring transactional and marketing text messages from Pharma Grade Peptides, including order/account updates and promotions. Consent is not a condition of purchase. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help.</span>
+									</label>
+								</div>
+
+								<label class="pga-hp" aria-hidden="true">Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+								<button type="submit" class="pga-btn">Create account</button>
+								<p class="pga-small">Already registered? <a href="#" class="js-pga-login-link">Sign in</a></p>
+							</form>
+						</div>
+
+						<!-- Password reset -->
+						<div class="pga-panel pga-reset-view" data-panel="forgot" role="tabpanel">
+							<h2>Reset your password</h2>
+							<p>Enter your email or username and we will send a secure reset link.</p>
+							<form class="pga-form js-pga-form" data-action="pga_forgot" novalidate>
+								<label class="pga-field">
+									<span>Email or Username</span>
+									<input type="text" name="login" autocomplete="username" required>
+								</label>
+								<label class="pga-hp" aria-hidden="true">Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+								<button type="submit" class="pga-btn">Send reset link</button>
+								<p class="pga-small"><a href="#" class="js-pga-login-link">Back to sign in</a></p>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div></div></div>
+<div style="position:fixed;bottom:12px;right:12px;background:#2f1a52;color:#fff;font:700 11px Arial;padding:6px 12px;border-radius:999px;opacity:.85">Static design preview</div>
+</body></html>

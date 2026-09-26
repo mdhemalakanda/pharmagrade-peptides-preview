@@ -1,0 +1,106 @@
+/* =========================================================================
+   PharmaGrade Core — FAQ widget (Elementor)
+   Reference: modernaminos.com FAQ — dark navy outer card, darker centered
+   uppercase header bar, white panel, navy pill rows with + icons.
+   ========================================================================= */
+
+.pgp-faq {
+	--pgp-faq-navy: #0d2338;
+	--pgp-faq-navy-dark: #061a2b;
+	--pgp-faq-navy-light: #1e3c5f;
+	font-family: inherit;
+}
+
+.pgp-faq__card {
+	background: var(--pgp-faq-navy);
+	border-radius: 20px;
+	overflow: hidden;
+	padding: 0;
+}
+
+.pgp-faq__head {
+	background: var(--pgp-faq-navy-dark);
+	color: #ffffff;
+	text-align: center;
+	padding: 17px 16px;
+	font-size: 13px;
+	font-weight: 800;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	line-height: 1.3;
+}
+
+.pgp-faq__panel {
+	background: #ffffff;
+	margin: 0 1px 1px;
+	border-radius: 0 0 19px 19px;
+	padding: 18px;
+	display: flex;
+	flex-direction: column;
+	gap: 11px;
+}
+
+.pgp-faq__q {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 14px;
+	background: var(--pgp-faq-navy);
+	color: #ffffff;
+	border: 0;
+	border-radius: 999px;
+	min-height: 46px;
+	padding: 12px 22px 12px 20px;
+	font-family: inherit;
+	font-size: 13.5px;
+	font-weight: 600;
+	line-height: 1.4;
+	text-align: left;
+	cursor: pointer;
+	transition: background 0.18s ease;
+}
+.pgp-faq__q:hover { background: var(--pgp-faq-navy-light); }
+.pgp-faq__q:focus-visible { outline: 3px solid rgba(30, 60, 95, 0.45); outline-offset: 2px; }
+.pgp-faq__qtext { flex: 1; }
+
+.pgp-faq__x {
+	position: relative;
+	width: 14px;
+	height: 14px;
+	flex: 0 0 auto;
+	transition: transform 0.2s ease;
+}
+.pgp-faq__x::before,
+.pgp-faq__x::after {
+	content: "";
+	position: absolute;
+	background: #ffffff;
+	left: 50%;
+	top: 50%;
+}
+.pgp-faq__x::before { width: 14px; height: 1.8px; transform: translate(-50%, -50%); }
+.pgp-faq__x::after { width: 1.8px; height: 14px; transform: translate(-50%, -50%); }
+
+.pgp-faq__a {
+	display: none;
+	margin: 0;
+	padding: 2px 24px 15px 20px;
+}
+.pgp-faq__a p {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.88);
+	font-size: 13px;
+	line-height: 1.65;
+}
+
+.pgp-faq__item.is-open { background: var(--pgp-faq-navy-light); border-radius: 22px; }
+.pgp-faq__item.is-open .pgp-faq__x { transform: rotate(45deg); }
+.pgp-faq__item.is-open .pgp-faq__q { background: transparent; border-radius: 0; }
+.pgp-faq__item.is-open .pgp-faq__a { display: block; }
+
+@media (max-width: 560px) {
+	.pgp-faq__panel { padding: 12px; gap: 8px; }
+	.pgp-faq__q { padding: 11px 16px 11px 15px; font-size: 12.5px; }
+	.pgp-faq__a { padding: 6px 16px 13px; }
+}

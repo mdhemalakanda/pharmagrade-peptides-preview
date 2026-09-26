@@ -1,0 +1,631 @@
+/* =========================================================================
+   PharmaGrade Core — Research Access gate (login / sign-up)
+   Reference: split hero layout — lavender page, white logo card, oversized
+   headline, hero artwork, stat tiles · right auth card with review badge,
+   pill tabs, Google button and round consent checkboxes.
+   Palette: violet #6d28d9 · lavender #ece5f8 · ink #0f0f14 ·
+   danger #9f1239 · success #2f7d32 · Type: Inter
+   ========================================================================= */
+
+body.pgp-standalone { margin: 0; }
+
+.pga {
+	--pga-violet: #6d28d9;
+	--pga-violet-bright: #7c3aed;
+	--pga-ink: #0f0f14;
+	--pga-text: #26212f;
+	--pga-muted: #6f6880;
+	--pga-line: rgba(31, 24, 54, 0.12);
+	--pga-lav: #ece5f8;
+	--pga-card: #fcfbff;
+	--pga-success: #2f7d32;
+	--pga-danger: #9f1239;
+	--pga-shadow: 0 30px 80px rgba(48, 26, 94, 0.14);
+
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	box-sizing: border-box;
+	background:
+		radial-gradient(1000px 560px at 8% 4%, rgba(147, 83, 255, 0.16), transparent 60%),
+		radial-gradient(820px 480px at 94% 18%, rgba(109, 40, 217, 0.12), transparent 58%),
+		linear-gradient(168deg, #f9f6fe 0%, #f2ebfa 46%, #eae1f6 100%);
+	font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+	color: var(--pga-text);
+	-webkit-font-smoothing: antialiased;
+	padding: clamp(24px, 3.4vw, 56px);
+	overflow-x: hidden;
+}
+.pga *, .pga *::before, .pga *::after { box-sizing: border-box; }
+
+.pga::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-image:
+		linear-gradient(rgba(86, 61, 125, 0.05) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(86, 61, 125, 0.05) 1px, transparent 1px);
+	background-size: 46px 46px;
+	-webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 82%);
+	mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 82%);
+	pointer-events: none;
+}
+
+.pga-shell {
+	position: relative;
+	z-index: 2;
+	width: min(1380px, 100%);
+	min-width: 0;
+	margin: auto;
+	display: grid;
+	grid-template-columns: minmax(0, 1.08fr) minmax(400px, 540px);
+	gap: clamp(44px, 7.5vw, 140px);
+	align-items: start;
+}
+
+/* ---------- Story column ---------- */
+.pga-story { padding: clamp(0px, 1vw, 10px) 0; min-width: 0; }
+
+.pga-logobox {
+	display: inline-flex;
+	align-items: center;
+	background: #ffffff;
+	border-radius: 22px;
+	padding: 15px 28px;
+	box-shadow: 0 18px 44px rgba(48, 26, 94, 0.1);
+}
+.pga-logobox img { display: block; width: auto; height: 46px; }
+
+.pga-eyebrow {
+	margin: 30px 0 12px;
+	color: var(--pga-violet);
+	font-size: 13px;
+	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-weight: 800;
+}
+.pga h1 {
+	margin: 0;
+	max-width: 740px;
+	color: #0b0b10;
+	font-size: clamp(40px, 4.4vw, 62px);
+	line-height: 0.98;
+	letter-spacing: -0.045em;
+	font-weight: 800;
+}
+.pga-intro {
+	max-width: 660px;
+	margin: 22px 0 0;
+	color: var(--pga-text);
+	font-size: clamp(16px, 1.5vw, 19px);
+	line-height: 1.6;
+	font-weight: 500;
+}
+
+.pga-hero {
+	margin: 28px 0 0;
+	border-radius: 22px;
+	overflow: hidden;
+	box-shadow: 0 26px 60px rgba(48, 26, 94, 0.24);
+	line-height: 0;
+}
+.pga-hero img { display: block; width: 100%; max-width: 100%; height: auto; }
+.pga-story .pga-hero {
+	max-width: 360px;
+}
+
+.pga-proof-grid {
+	margin-top: 24px;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 14px;
+	width: min(600px, 100%);
+}
+.pga-proof-grid div {
+	background: #fff;
+	border: 1px solid rgba(31, 24, 54, 0.05);
+	border-radius: 16px;
+	padding: 15px 16px 13px;
+	box-shadow: 0 14px 34px rgba(48, 26, 94, 0.08);
+}
+.pga-proof-grid span {
+	display: block;
+	color: var(--pga-ink);
+	font-size: 23px;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	line-height: 1;
+}
+.pga-proof-grid small {
+	display: block;
+	margin-top: 5px;
+	color: #3f3a4d;
+	font-size: 11.5px;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	font-weight: 800;
+}
+
+.pga-compliance-note {
+	margin-top: 22px;
+	width: min(600px, 100%);
+	display: flex;
+	gap: 22px;
+	align-items: flex-start;
+	padding: 18px 24px;
+	border-radius: 12px;
+	background: #ffffff;
+	box-shadow: 0 1px 2px rgba(23, 15, 43, 0.04), 0 8px 22px rgba(23, 15, 43, 0.08);
+	font-size: 15px;
+	line-height: 1.55;
+	color: #2b2438;
+}
+.pga-compliance-note span { min-width: 0; }
+.pga-compliance-note strong { color: #1d1428; white-space: nowrap; font-weight: 800; }
+
+/* ---------- Card ---------- */
+.pga--card-only {
+	background: none;
+	min-height: 0;
+	padding: 0;
+	display: block;
+}
+.pga--card-only::after { content: none; }
+.pga--card-only .pga-shell {
+	width: 100%;
+	max-width: 560px;
+	display: block;
+	margin: 0 auto;
+	gap: 0;
+}
+.pga-card {
+	width: 100%;
+	min-width: 0;
+	background: var(--pga-card);
+	border: 1px solid rgba(31, 24, 54, 0.08);
+	border-radius: 24px;
+	box-shadow: var(--pga-shadow);
+	padding: clamp(18px, 2vw, 26px);
+}
+.pga-card__title {
+	margin: 0 0 4px;
+	text-align: center;
+	color: #0d0d12;
+	font-size: 22px;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	line-height: 1.15;
+}
+.pga-card__kicker {
+	margin: 0 0 14px;
+	text-align: center;
+	color: #55506a;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+/* ---------- Reviews badge ---------- */
+.pga-reviews {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	background: #fff;
+	border: 1px solid rgba(31, 24, 54, 0.09);
+	border-radius: 18px;
+	padding: 15px 18px;
+	box-shadow: 0 10px 26px rgba(48, 26, 94, 0.06);
+}
+.pga-reviews__brand {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 7px;
+	background: #2f1a52;
+	border-radius: 14px;
+	padding: 12px 16px 9px;
+}
+.pga-reviews__brand img { display: block; width: auto; height: 32px; }
+.pga-reviews__stars {
+	color: #f5a623;
+	font-size: 12px;
+	letter-spacing: 2.5px;
+	line-height: 1;
+}
+.pga-reviews__score { min-width: 0; }
+.pga-reviews__score b {
+	display: block;
+	color: #0d0d12;
+	font-size: 20px;
+	font-weight: 800;
+	letter-spacing: -0.01em;
+	line-height: 1.15;
+}
+.pga-reviews__scorenum {
+	display: block;
+	margin-top: 2px;
+	color: #0d0d12;
+	font-size: 17px;
+	font-weight: 800;
+	line-height: 1.2;
+}
+.pga-reviews__score small {
+	display: block;
+	margin-top: 1px;
+	color: #0d0d12;
+	font-size: 15.5px;
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+.pga-alert {
+	margin: 0 0 12px;
+	padding: 12px 14px;
+	border-radius: 16px;
+	border: 1px solid rgba(159, 18, 57, 0.18);
+	background: rgba(159, 18, 57, 0.07);
+	color: var(--pga-danger);
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1.4;
+}
+.pga-alert--ok {
+	border-color: rgba(47, 125, 50, 0.22);
+	background: rgba(47, 125, 50, 0.08);
+	color: var(--pga-success);
+}
+
+/* ---------- Tabs ---------- */
+.pga-tabs {
+	margin-top: 16px;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 4px;
+	width: 100%;
+	border: 0;
+	background: var(--pga-lav);
+	border-radius: 999px;
+	padding: 5px;
+}
+.pga-tab {
+	appearance: none;
+	border: 0;
+	background: transparent;
+	border-radius: 999px;
+	min-height: 46px;
+	color: var(--pga-violet);
+	font: 700 14.5px/1 "Inter", system-ui, sans-serif;
+	cursor: pointer;
+	transition: background 0.16s ease, box-shadow 0.16s ease, color 0.16s ease;
+}
+.pga-tab.is-active {
+	background: #fff;
+	color: #5b21b6;
+	box-shadow: 0 8px 22px rgba(48, 26, 94, 0.14);
+}
+.pga-tab:focus-visible,
+.pga-password__toggle:focus-visible,
+.pga-btn:focus-visible,
+.pga-google:focus-visible {
+	outline: 3px solid rgba(124, 58, 237, 0.45);
+	outline-offset: 2px;
+}
+.pga-panels { margin-top: 15px; }
+.pga-panel { display: none; }
+.pga-panel.is-active { display: block; }
+
+/* ---------- Google ---------- */
+.pga-google {
+	margin-top: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+	min-height: 52px;
+	border-radius: 14px;
+	border: 1px solid rgba(31, 24, 54, 0.13);
+	background: #fff;
+	color: var(--pga-ink);
+	font: 700 15px/1 "Inter", system-ui, sans-serif;
+	text-decoration: none;
+	transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+}
+.pga-google:hover {
+	border-color: rgba(48, 26, 94, 0.3);
+	box-shadow: 0 12px 28px rgba(48, 26, 94, 0.1);
+	transform: translateY(-1px);
+}
+.pga-google.is-unconfigured { opacity: 0.55; }
+.pga-google-note {
+	margin: 10px 0 0;
+	text-align: center;
+	color: var(--pga-muted);
+	font-size: 12.5px;
+	line-height: 1.4;
+}
+
+/* ---------- Form fields ---------- */
+.pga-form { display: flex; flex-direction: column; gap: 14px; }
+.pga-field { display: block; margin: 0; }
+.pga-field > span:first-child {
+	display: block;
+	margin: 0 0 8px;
+	color: #16121e;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1.2;
+}
+.pga-field input {
+	width: 100%;
+	min-height: 52px;
+	padding: 13px 15px;
+	border-radius: 12px;
+	border: 1px solid #e3ddef;
+	background: #fff;
+	color: var(--pga-ink);
+	font: 500 15.5px/1.3 "Inter", system-ui, sans-serif;
+	outline: none;
+	transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+}
+.pga-field input::placeholder { color: #a49bb8; }
+.pga-field input:focus {
+	border-color: rgba(124, 58, 237, 0.65);
+	box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.13);
+}
+.pga-field input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px #fff inset;
+	-webkit-text-fill-color: var(--pga-ink);
+}
+.pga-field-note {
+	display: block;
+	margin: 7px 0 0;
+	color: var(--pga-muted);
+	font-size: 12px;
+	line-height: 1.35;
+	font-weight: 650;
+}
+.pga-field.has-error input {
+	border-color: rgba(159, 18, 57, 0.72);
+	background: rgba(159, 18, 57, 0.035);
+	box-shadow: 0 0 0 4px rgba(159, 18, 57, 0.1);
+}
+.pga-field.has-error .pga-field-note { color: var(--pga-danger); }
+.pga-field.has-success input {
+	border-color: rgba(47, 125, 50, 0.55);
+	box-shadow: 0 0 0 4px rgba(47, 125, 50, 0.08);
+}
+.pga-password { position: relative; display: block; }
+.pga-password .pga-password__input { padding-right: 92px; }
+.pga-password__toggle {
+	position: absolute;
+	top: 50%;
+	right: 8px;
+	transform: translateY(-50%);
+	border: 1px solid #e3ddef;
+	background: #fff;
+	color: #16121e;
+	border-radius: 999px;
+	min-height: 36px;
+	padding: 0 16px;
+	font: 700 13px/1 "Inter", system-ui, sans-serif;
+	cursor: pointer;
+	transition: background 0.15s ease, border-color 0.15s ease;
+}
+.pga-password__toggle:hover { background: #f5f1fb; border-color: #d4c9ea; }
+
+.pga-smsnote {
+	margin: 0;
+	text-align: center;
+	color: var(--pga-muted);
+	font-size: 12.5px;
+	line-height: 1.45;
+}
+
+/* ---------- Terms / checks ---------- */
+.pga-terms {
+	border: 1px solid #e7e1f0;
+	border-radius: 14px;
+	padding: 15px 16px;
+	background: #fff;
+}
+.pga-terms__head {
+	margin: 0 0 8px;
+	color: var(--pga-violet);
+	font-weight: 800;
+	font-size: 15px;
+	line-height: 1.2;
+}
+.pga-terms__body { color: #4c4459; font-size: 13px; line-height: 1.55; }
+.pga-terms__body p { margin: 0 0 8px; }
+.pga-terms__body p:last-child { margin-bottom: 0; }
+.pga-terms__strong { font-weight: 500; color: #332c40; }
+.pga-check {
+	display: flex;
+	gap: 11px;
+	align-items: flex-start;
+	margin: 12px 0 0;
+	color: #1a1524;
+	font-size: 13px;
+	line-height: 1.5;
+	font-weight: 700;
+	cursor: pointer;
+}
+.pga-check input[type="checkbox"] {
+	appearance: none;
+	-webkit-appearance: none;
+	width: 19px;
+	height: 19px;
+	margin: 2px 0 0;
+	flex: 0 0 auto;
+	border: 2px solid #b3aac4;
+	border-radius: 50%;
+	background: #fff;
+	display: inline-grid;
+	place-items: center;
+	cursor: pointer;
+	transition: background 0.15s ease, border-color 0.15s ease;
+}
+.pga-check input[type="checkbox"]::before {
+	content: "";
+	width: 10px;
+	height: 6px;
+	border-left: 2.5px solid #fff;
+	border-bottom: 2.5px solid #fff;
+	transform: rotate(-45deg) scale(0);
+	transform-origin: center;
+	margin-top: -2px;
+	transition: transform 0.14s ease;
+}
+.pga-check input[type="checkbox"]:checked {
+	background: var(--pga-violet);
+	border-color: var(--pga-violet);
+}
+.pga-check input[type="checkbox"]:checked::before { transform: rotate(-45deg) scale(1); }
+.pga-check input[type="checkbox"]:focus-visible {
+	outline: 3px solid rgba(124, 58, 237, 0.45);
+	outline-offset: 2px;
+}
+.pga-check.has-error { color: var(--pga-danger); }
+.pga-check.has-error input[type="checkbox"] { border-color: rgba(159, 18, 57, 0.72); }
+
+/* ---------- Buttons ---------- */
+.pga-btn,
+button.pga-btn {
+	width: 100%;
+	min-height: 52px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	border: 0;
+	border-radius: 999px;
+	padding: 13px 18px;
+	background: linear-gradient(90deg, #5b21b6, #8b5cf6);
+	color: #fff;
+	box-shadow: 0 16px 34px rgba(109, 40, 217, 0.3);
+	font: 800 15px/1 "Inter", system-ui, sans-serif;
+	text-decoration: none;
+	cursor: pointer;
+	transition: transform 0.14s ease, filter 0.14s ease, box-shadow 0.14s ease;
+}
+.pga-btn:hover {
+	filter: brightness(1.05);
+	transform: translateY(-1px);
+	box-shadow: 0 18px 40px rgba(109, 40, 217, 0.36);
+}
+.pga-btn[disabled] { opacity: 0.65; cursor: progress; transform: none; }
+.pga-small {
+	margin: 2px 0 0;
+	text-align: center;
+	color: var(--pga-muted);
+	font-size: 13px;
+	line-height: 1.45;
+}
+.pga-small a { color: var(--pga-violet); font-weight: 800; text-decoration: none; }
+.pga-small a:hover { text-decoration: underline; }
+.pga-hp {
+	position: absolute !important;
+	left: -9999px !important;
+	width: 1px !important;
+	height: 1px !important;
+	overflow: hidden !important;
+}
+
+/* ---------- Reset view ---------- */
+.pga-reset-view h2 {
+	margin: 0;
+	text-align: center;
+	color: var(--pga-ink);
+	font-size: 24px;
+	line-height: 1.2;
+	letter-spacing: -0.03em;
+	font-weight: 800;
+}
+.pga-reset-view > p {
+	margin: 8px 0 16px;
+	text-align: center;
+	color: var(--pga-muted);
+	font-size: 14px;
+	line-height: 1.45;
+}
+
+/* ---------- Flash toast ---------- */
+.pga-flash {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 30;
+	max-width: 360px;
+	padding: 14px 18px;
+	border-radius: 16px;
+	background: #fff;
+	border: 1px solid var(--pga-line);
+	box-shadow: var(--pga-shadow);
+	font-size: 14px;
+	font-weight: 650;
+	color: var(--pga-ink);
+}
+.pga-flash[hidden] { display: none; }
+.pga-flash.is-error { border-color: rgba(159, 18, 57, 0.3); color: var(--pga-danger); }
+.pga-flash.is-ok { border-color: rgba(47, 125, 50, 0.3); color: var(--pga-success); }
+
+/* =========================================================================
+   Responsive
+   ========================================================================= */
+
+@media (max-width: 1120px) {
+	.pga-shell {
+		grid-template-columns: 1fr;
+		gap: 34px;
+		max-width: 640px;
+	}
+	.pga-story {
+		text-align: center;
+		padding: 0;
+	}
+	.pga-logobox { margin: 0 auto; }
+	.pga h1 { margin-inline: auto; }
+	.pga-intro { margin-inline: auto; }
+	.pga-proof-grid, .pga-compliance-note { margin-left: auto; margin-right: auto; }
+	.pga-compliance-note { text-align: left; }
+	.pga-card { max-width: 600px; margin: 0 auto; }
+	.pga-reviews { text-align: left; }
+}
+
+@media (max-width: 560px) {
+	.pga { padding: 0; }
+	.pga::after { display: none; }
+	.pga-shell { width: 100%; display: flex; flex-direction: column; gap: 0; max-width: none; }
+	.pga-story {
+		padding: 26px 18px 22px;
+		background: linear-gradient(180deg, #f6f1fd 0%, #efe8f9 100%);
+	}
+	.pga-logobox { padding: 12px 20px; border-radius: 18px; }
+	.pga-logobox img { height: 38px; }
+	.pga-eyebrow { margin-top: 22px; font-size: 12px; }
+	.pga h1 { font-size: clamp(30px, 8.6vw, 38px); line-height: 0.99; }
+	.pga-intro { font-size: 15px; line-height: 1.55; margin-top: 16px; }
+	.pga-hero { border-radius: 16px; }
+	.pga-proof-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+	.pga-proof-grid div { border-radius: 13px; padding: 12px 10px 11px; }
+	.pga-proof-grid span { font-size: 19px; }
+	.pga-proof-grid small { font-size: 10px; line-height: 1.25; }
+	.pga-compliance-note { margin-top: 14px; border-radius: 12px; padding: 15px 18px; gap: 8px; flex-direction: column; }
+	.pga-compliance-note strong { white-space: nowrap; }
+	.pga-card {
+		border-radius: 24px 24px 0 0;
+		border-left: 0;
+		border-right: 0;
+		border-bottom: 0;
+		box-shadow: none;
+		padding: 18px 16px 26px;
+		max-width: none;
+	}
+	.pga-reviews { gap: 14px; padding: 13px 14px; }
+	.pga-reviews__score b { font-size: 17px; }
+	.pga-reviews__scorenum { font-size: 15px; }
+	.pga-reviews__score small { font-size: 14px; }
+	.pga-field input { min-height: 50px; font-size: 16px; }
+}
