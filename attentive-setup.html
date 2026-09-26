@@ -1,0 +1,59 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head><meta charset="utf-8"><title>Pharma Grade Peptides — Attentive API Key Setup</title>
+<style>
+body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; color: #222; margin: 40px; max-width: 900px; }
+h1 { font-size: 18pt; color: #2f1a52; margin-bottom: 2pt; }
+p.sub { color: #666; font-size: 10pt; margin-top: 0; }
+h2 { font-size: 13pt; color: #5b21b6; margin-top: 20pt; }
+ol li, ul li { line-height: 1.6; margin-bottom: 6pt; }
+.step { background: #f4f1fa; border-radius: 6px; padding: 2pt 8pt; font-weight: bold; color: #5b21b6; }
+code { font-family: Consolas, monospace; font-size: 10pt; background: #f4f1fa; border-radius: 4px; padding: 1px 5px; }
+a { color: #5b21b6; }
+.note { background: #fff8e6; border: 1px solid #f2e3b3; border-radius: 8px; padding: 8pt 12pt; margin: 10pt 0; font-size: 10.5pt; }
+table { border-collapse: collapse; margin: 8pt 0; }
+th, td { border: 1px solid #ccc; padding: 5pt 10pt; font-size: 10pt; text-align: left; }
+th { background: #f1ebfb; }
+</style></head>
+<body>
+
+<h1>Attentive API Key — Setup Guide</h1>
+<p class="sub">For the PharmaGrade Core plugin SMS integration (pharmagradepeptides.is) &middot; September 26, 2026</p>
+
+<h2>Step 1 &mdash; Create the API key in your Attentive account</h2>
+<ol>
+<li><span class="step">1</span> Log in to your Attentive dashboard.</li>
+<li><span class="step">2</span> Open this direct link: <a href="https://ui.attentivemobile.com/integrations/custom-app/management" target="_blank">ui.attentivemobile.com/integrations/custom-app/management</a> &mdash; Attentive's official documentation states: &ldquo;To generate a unique API key, you must create an app in the Attentive platform.&rdquo;</li>
+<li><span class="step">3</span> Create a new custom app (name it for example <b>PharmaGrade Website</b>).</li>
+<li><span class="step">4</span> Enable the <code>subscriptions:write</code> scope &mdash; the documented scope for &ldquo;Read and write permissions to the Subscribers API,&rdquo; which covers the subscribe endpoint the website form uses.</li>
+<li><span class="step">5</span> The platform shows the unique API key <b>once</b> &mdash; copy it immediately and store it safely (Attentive treats it like a password: anyone holding it can message your customers).</li>
+</ol>
+<div class="note">If you cannot access that page, some accounts need it enabled first &mdash; Attentive's documentation says to email <b>api-tokens@attentivemobile.com</b> for access.</div>
+
+<h2>Step 2 &mdash; Connect the key to the website</h2>
+<ol>
+<li><span class="step">1</span> WordPress admin &rarr; <b>Settings &rarr; PharmaGrade Access &rarr; API &amp; SSO Credentials</b>.</li>
+<li><span class="step">2</span> Paste the key into the <b>Attentive API Token</b> field.</li>
+<li><span class="step">3</span> Click <b>Test connection</b> &mdash; you should see the green &ldquo;&#10003; Token accepted&rdquo; message (it checks authentication without creating any subscriber).</li>
+<li><span class="step">4</span> Click <b>Save changes</b>. From now on, every signup where the SMS box is ticked is pushed to Attentive automatically.</li>
+</ol>
+
+<h2>How the integration works (technical reference)</h2>
+<ul>
+<li>Endpoint: <code>POST https://api.attentivemobile.com/v2/subscriptions</code> (the Add Subscriptions endpoint per docs.attentive.com/reference/addsubscriptions).</li>
+<li>Authentication header: <code>Authorization: Bearer &lt;your API key&gt;</code>.</li>
+<li>Phone numbers are normalized to E.164 automatically &mdash; (555) 000-1234 becomes +15550001234.</li>
+<li>A successful submission returns <b>202 Accepted</b>; the subscription is then created asynchronously on Attentive's side.</li>
+<li>The SMS checkbox on the signup form is the explicit marketing consent captured with each submission.</li>
+</ul>
+
+<h2>Troubleshooting</h2>
+<table>
+<tr><th>Symptom</th><th>Meaning / Fix</th></tr>
+<tr><td>Test connection: red &ldquo;Rejected &mdash; token is not valid&rdquo;</td><td>The key was copied incompletely or revoked &mdash; generate a new one in the custom app page.</td></tr>
+<tr><td>Test passes but live signups fail</td><td>Your Attentive account may require a <b>Sign-up Unit ID</b>. Find it in the Attentive platform &rarr; Sign-up Units tab &rarr; ID column, share it, and it will be added to the integration (one-line change).</td></tr>
+<tr><td>Test connection: red &ldquo;Unexpected response&rdquo;</td><td>Network or Attentive outage &mdash; retry in a few minutes.</td></tr>
+</table>
+
+<p class="sub" style="margin-top:24pt">References: docs.attentive.com/docs/authentication &middot; docs.attentive.com/reference/addsubscriptions &middot; ui.attentivemobile.com/integrations/custom-app/management</p>
+
+</body></html>
